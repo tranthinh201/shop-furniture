@@ -1,16 +1,43 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row } from 'reactstrap';
-import CartProductItem from '../components/UI/CartProductItem';
+import CartItem from '../components/UI/CartItem';
 import CardContext from '../Context/CartContext';
 import '../styles/cart.css';
+
 
 function Cart() {
     const CartContext = useContext(CardContext)
     const { product, setProduct } = CartContext;
-    console.log(product)
-    // let quantily;
+    const [quantity, setQuantity] = useState(1)
+
+    let productCart;
+    product.map((item, index) => {
+        productCart = [{...product[index], quantity: 10}]
+    })
+    
+
+    console.log(productCart)
+    console.log(productCart)
+
     // const sumQuantily = product.reduce((item) => item.id)
+    const handelRemoveProduct = (id) => {
+        const filter = product.filter((items) => items.id !== id)
+        // console.log(filter)
+        setProduct(filter)
+    }
+
+    // const increaseProduct = (item) => {
+    //     item.quantity = 20
+    // }
+
+    const totalPrice = () => {
+        let total = 0;
+        product.map((item) => {
+            total += item.price * quantity
+        })
+        return total;
+    }
     return (
         <Container>
             <Row style={{height: '53vh'}}>
@@ -36,16 +63,25 @@ function Cart() {
                                     <th scope="col">Subtotal</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                    <tbody>
                                     {
-                                        <CartProductItem data={product}/>
+                                        product?.map((item, index) => (
+                                            <tr key={index}>
+                                                <th><button className='remove-item' onClick={() => handelRemoveProduct(item.id)}><i class="ri-close-fill"></i></button></th>
+                                                <td>{item.productName}</td>
+                                                <td>{item.price} $</td>
+                                                <td>{item.quantity}</td>
+                                                <td>{item.price * quantity} $</td>
+                                            </tr>
+                                        ))
                                     }
-                                </tbody>
-                                </table>
+                                    
+                                    </tbody>
+                            </table>
+                            <span>Total: <b>{totalPrice()}$</b> </span>
                         </div>
                     )
                 }
-
             </Row>
         </Container>
     );

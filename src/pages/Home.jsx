@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from "reactstrap"
 import { Link } from 'react-router-dom';
 
-
 import Title from '../components/Title/Title';
 import '../styles/home.css'
 import { motion } from 'framer-motion';
@@ -13,7 +12,6 @@ import counterImage from '../assets/images/counter-timer-img.png';
 import Clock from '../components/UI/Clock';
 import Slider from '../components/UI/Slider';
 
-
 function Home() {
 
     const [trendingProducts, setTrendingProducts] = useState([])
@@ -21,14 +19,15 @@ function Home() {
     const [mobileProducts, setMobileProducts] = useState([])
     const [wirelessProducts, setWirelessProducts] = useState([])
     const [popularProduct, setPopularProduct] = useState([])
+
  
 
     useEffect(() => {
-        const filterTrendingProduct = products.filter(item => item.category == 'chair')
-        const filterBestSaleProduct = products.filter(item => item.category == 'sofa')
-        const filterMobileProduct = products.filter(item => item.category == 'mobile')
-        const filterWirelessProduct = products.filter(item => item.category == 'wireless')
-        const filterPopularProduct = products.filter(item => item.category == 'watch')
+        const filterTrendingProduct = products.filter(item => item.category === 'chair')
+        const filterBestSaleProduct = products.filter(item => item.category === 'sofa')
+        const filterMobileProduct = products.filter(item => item.category === 'mobile')
+        const filterWirelessProduct = products.filter(item => item.category === 'wireless')
+        const filterPopularProduct = products.filter(item => item.category === 'watch')
         
 
         setTrendingProducts(filterTrendingProduct)
@@ -38,7 +37,6 @@ function Home() {
         setPopularProduct(filterPopularProduct)
 
     }, [])
-
 
     return (
         <Title title="Home">

@@ -12,15 +12,15 @@ function Header() {
     const nav__links = [
         {
             path: '',
-            display: 'Trang chủ'
+            display: 'Home'
         },
         {
             path: 'shop',
-            display: 'Cửa hàng'
+            display: 'Shop'
         },
         {
             path: 'cart',
-            display: 'Giỏ hàng'
+            display: 'Cart'
         }
 
     ]
@@ -57,7 +57,7 @@ function Header() {
                 <Row>
                     <div className="nav__wrapper">
                         <div className="logo">
-                            <img src={logo} alt="logo" />
+                            <i class="ri-store-2-line"></i>
                             <div>
                                 <h1>
                                     <NavLink to='/'>Thinh shops</NavLink>

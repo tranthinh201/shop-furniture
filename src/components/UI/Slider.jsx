@@ -24,7 +24,7 @@ function Slider({ data }) {
                 className="mySwiper"
             >
                 {data?.map((item, index) => (
-                    <SwiperSlide><Card item={item} key={index}/></SwiperSlide>
+                    <SwiperSlide key={index}><Card item={item}/></SwiperSlide>
                 ))}
             </Swiper>
         </>

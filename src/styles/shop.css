@@ -1,0 +1,72 @@
+select {
+    /* Reset Select */
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    /* Personalize */
+    flex: 1;
+    padding: 0 1em;
+    padding: 4px;
+    margin: 2px;
+    background-image: none;
+    cursor: pointer;
+  }
+  /* Remove IE arrow */
+  select::-ms-expand {
+    display: none;
+  }
+  /* Custom Select wrapper */
+  .select {
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 3em;
+    border-radius: .25em;
+    overflow: hidden;
+  }
+  /* Arrow */
+  .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em;
+    background-color: #34495e;
+    transition: .25s all ease;
+    pointer-events: none;
+  }
+  /* Transition */
+  .select:hover::after {
+    color: #f39c12;
+  }
+  
+
+  .filter-product {
+    display: flex;
+    border: 1px solid var(--primary-color);
+    margin-top: 20px;
+  }
+
+  .filter-box {
+    display: flex;
+    margin: 3px;
+    padding: 6px;
+    align-items: center;
+  }
+
+  .filter-box > div:first-child {
+    margin-right: 4px;
+  }
+
+  .filter-box > input {
+    outline: none;
+    margin-right: 4px;
+    height: 100%;
+  }
+
+  .ri-search-line {
+    border: 1px solid var(--primary-color);
+    background: var(--primary-color);
+    color: white;
+    padding: 4px 10px;
+  }
