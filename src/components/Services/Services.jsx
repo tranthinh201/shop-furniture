@@ -2,7 +2,7 @@ import React from 'react';
 import './services.css';
 import { Container, Row, Col } from 'reactstrap';
 import { motion } from 'framer-motion'
-import servicesData from '../assets/data/serviceData'
+import servicesData from '../../assets/data/serviceData'
 
 function Services() {
     return (

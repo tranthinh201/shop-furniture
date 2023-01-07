@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Title from '../components/Title/Title';
 import '../styles/home.css'
 import { motion } from 'framer-motion';
-import Services from '../services/Services';
+// import Services from '../services/Services';
 import ProductList from '../components/UI/ProductList';
 import products from '../assets/data/products'
 import counterImage from '../assets/images/counter-timer-img.png';
@@ -81,7 +81,7 @@ function Home() {
                     </Row>
                 </Container>
             </section>
-            <Services/>
+            {/* <Services/> */}
             <section className="trendding__product">
                 <Container>
                     <h2 className="section__title" style={{padding: '20px'}}>
